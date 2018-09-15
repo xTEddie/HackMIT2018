@@ -1,5 +1,5 @@
-# ENVIRONMENT = 'dev'
-ENVIRONMENT = 'prod'
+ENVIRONMENT = 'dev'
+# ENVIRONMENT = 'prod'
 
 SETTINGS_MODULE = 'config.settings.dev'
 
