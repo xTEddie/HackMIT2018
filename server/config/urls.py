@@ -8,6 +8,7 @@ urlpatterns = [
     path(r'', include('apps.ping.urls')),
     path(r'', include('apps.cameras.urls')),
     path(r'', include('apps.tags.urls')),
+    path(r'', include('apps.videoframes.urls')),
 
     path('admin/', admin.site.urls),
     path(r'api-auth/', include('rest_framework.urls', namespace='rest_framework')),
