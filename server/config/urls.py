@@ -6,6 +6,7 @@ from rest_framework.documentation import include_docs_urls
 
 urlpatterns = [
     path(r'', include('apps.ping.urls')),
+    path(r'', include('apps.cameras.urls')),
 
     path('admin/', admin.site.urls),
     path(r'api-auth/', include('rest_framework.urls', namespace='rest_framework')),
