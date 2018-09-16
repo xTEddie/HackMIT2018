@@ -1,0 +1,86 @@
+[
+{
+  "model": "tags.tag",
+  "pk": 1,
+  "fields": {
+    "name": "gun"
+  }
+},
+{
+  "model": "tags.tag",
+  "pk": 2,
+  "fields": {
+    "name": "weapon"
+  }
+},
+{
+  "model": "tags.tag",
+  "pk": 3,
+  "fields": {
+    "name": "knife"
+  }
+},
+{
+  "model": "tags.tag",
+  "pk": 5,
+  "fields": {
+    "name": "arm"
+  }
+},
+{
+  "model": "tags.tag",
+  "pk": 6,
+  "fields": {
+    "name": "toy"
+  }
+},
+{
+  "model": "tags.tag",
+  "pk": 7,
+  "fields": {
+    "name": "firearm"
+  }
+},
+{
+  "model": "tags.tag",
+  "pk": 8,
+  "fields": {
+    "name": "shooting range"
+  }
+},
+{
+  "model": "tags.tag",
+  "pk": 9,
+  "fields": {
+    "name": "rifle"
+  }
+},
+{
+  "model": "tags.tag",
+  "pk": 10,
+  "fields": {
+    "name": "fun"
+  }
+},
+{
+  "model": "tags.tag",
+  "pk": 11,
+  "fields": {
+    "name": "instrument"
+  }
+},
+{
+  "model": "tags.tag",
+  "pk": 12,
+  "fields": {
+    "name": "competition"
+  }
+},
+{
+  "model": "tags.tag",
+  "pk": 15,
+  "fields": {
+    "name": "vehicle"
+  }
+}
+]
