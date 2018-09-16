@@ -1,0 +1,45 @@
+{
+  "scripts": {
+    "start": "node_modules/.bin/webpack-dev-server --mode development --http --config webpack.config.dev.js",
+    "build": "NODE_ENV=production node_modules/.bin/webpack --mode production --progress --verbose"
+  },
+  "dependencies": {
+    "@babel/core": "^7.0.0-beta.54",
+    "@babel/preset-env": "^7.0.0-beta.54",
+    "@babel/preset-react": "^7.0.0-beta.54",
+    "axios": "^0.18.0",
+    "babel-loader": "^8.0.0-beta",
+    "chart.js": "^2.7.2",
+    "clean-webpack-plugin": "^0.1.19",
+    "compression-webpack-plugin": "^1.1.11",
+    "css-loader": "^1.0.0",
+    "express": "^4.16.3",
+    "file-loader": "^1.1.11",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "image-webpack-loader": "^4.3.1",
+    "lodash": "^4.17.10",
+    "mini-css-extract-plugin": "^0.4.1",
+    "moment": "^2.22.2",
+    "node-sass": "^4.9.2",
+    "optimize-css-assets-webpack-plugin": "^5.0.0",
+    "react": "^16.4.1",
+    "react-bootstrap-table-next": "^0.1.15",
+    "react-chartjs-2": "^2.7.4",
+    "react-dom": "^16.4.1",
+    "react-ga": "^2.5.3",
+    "react-moment": "^0.7.9",
+    "react-router-dom": "^4.3.1",
+    "sass-loader": "^7.0.3",
+    "semantic-ui-react": "^0.82.0",
+    "style-loader": "^0.21.0",
+    "uglifyjs-webpack-plugin": "^1.2.7",
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4",
+    "webpack-merge": "^4.1.4"
+  },
+  "devDependencies": {
+    "@babel/polyfill": "^7.0.0-rc.2"
+  }
+}
