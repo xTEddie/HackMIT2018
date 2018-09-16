@@ -16,6 +16,10 @@ class VideoFrameList(ListAPIView):
     queryset = VideoFrame.objects.all()
     serializer_class = VideoFrameSerializer
 
+    def get_queryset(self):
+        qs = super(VideoFrameList, self).get_queryset()
+        qs = qs.order_by('-uploaded_at')
+        return qs
 
 class VideoFrameCreate(APIView):
     http_method_names = ['post']
