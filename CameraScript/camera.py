@@ -22,7 +22,7 @@ data = dict(
 while count < max_count:
     camera.start_preview()
     sleep(WAIT_TIME)
-    image_path = os.path.join('home','pi','Desktop','Active','image-{}.png'.format(count))
+    image_path = os.path.join('/', 'home','pi','Desktop','Active','image-{}.png'.format(count))
     camera.capture(image_path)
 
     # Send image to server 
