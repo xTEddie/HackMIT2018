@@ -3,7 +3,7 @@ from apps.videoframes.models import VideoFrame
 
 
 class VideoFrameAdmin(admin.ModelAdmin):
-    list_display = ('id', 'image', 'tag', 'uploaded_at')
+    list_display = ('id', 'camera', 'image', 'tag', 'uploaded_at')
 
 
 admin.site.register(VideoFrame, VideoFrameAdmin)
