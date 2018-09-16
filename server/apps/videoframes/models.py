@@ -12,7 +12,7 @@ class VideoFrame(models.Model):
     uploaded_at = models.DateTimeField(blank=True, null=True)
     tag = models.ForeignKey('tags.tag', related_name='videoframes', on_delete=models.CASCADE, blank=True)
     camera = models.ForeignKey('cameras.camera', related_name='videoframes', on_delete=models.CASCADE, blank=True)
-    safetyStatus = models.BooleanField(default=True)
+    safety_status = models.BooleanField(default=True)
 
     def save(self, *args, **kwargs): 
         if not self.id:

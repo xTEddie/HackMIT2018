@@ -54,8 +54,11 @@ class VideoFrameCreate(APIView):
         pprint.pprint(labels)
         print("CLASSIFICATIONS: {}".format(classifications))
 
+        # Threat found
         if len(intersection):
             click.echo(click.style("{0}".format('WARNING '*10), fg='red', bold=True))
             print(intersection)
+            video_frame.safety_status = False
+            video_frame.save()
     
         return Response(serializer.data, status.HTTP_201_CREATED)        

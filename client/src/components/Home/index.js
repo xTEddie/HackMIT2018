@@ -38,7 +38,7 @@ class Home extends Component {
         row['latitude'] = snapshot['camera']['latitude']
         row['image'] = snapshot['image']
         row['uploaded_at'] = snapshot['uploaded_at']
-        row['safety_status'] = snapshot['safetyStatus']
+        row['safety_status'] = snapshot['safety_status']
         return row
       })
       this.setState({
@@ -148,7 +148,6 @@ class Home extends Component {
                 </Table.Cell>
                 <Table.Cell>
                   <i className={snapshot['safety_status'] === true? "check circle green big icon": "times circle red big icon"}/>
-                  {/* <i className={"check circle green"}/> */}
                 </Table.Cell>
               </Table.Row>
             )
