@@ -163,7 +163,7 @@ class SnapshotsTable extends Component {
                   </p>
                 </Table.Cell>
                 <Table.Cell>
-                  <i className={snapshot['safety_status'] === true? "check circle green big icon": "times circle red big icon"}/>
+                  <i className={snapshot['safety_status'] === true? "check circle green big icon": "exclamation triangle red big icon"}/>
                 </Table.Cell>
               </Table.Row>
             )
@@ -178,7 +178,7 @@ class SnapshotsTable extends Component {
     return (
       <div>
         <h1>
-          <i className="exclamation triangle icon red"/>
+          <i className="exclamation circle icon red"/>
           Shot Spot
         </h1>
         {this.renderTable()}
