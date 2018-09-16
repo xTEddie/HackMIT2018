@@ -1,4 +1,5 @@
 import os
+import click
 from rest_framework import status
 from rest_framework.generics import ListAPIView, CreateAPIView
 from rest_framework.views import APIView
@@ -37,17 +38,24 @@ class VideoFrameCreate(APIView):
         serializer = VideoFrameSerializer(video_frame)
         print("FRAME RECEIVED")
 
+        click.echo(click.style("{1} {0} {1}".format(camera_name, "="*70), fg='green', bold=True))
+
         # Send image to Google Vision API
-        classifications = get_tags(video_frame.image.path)
+        labels = get_tags(video_frame.image.path)
+
+        classifications = [obj['label'] for obj in labels]
         tag_objects = Tag.objects.all()
         tags = [obj.name for obj in tag_objects]
 
         intersection = list(set(tags) & set(classifications))
 
         print("TAGS: {}".format(tags))
+        import pprint
+        pprint.pprint(labels)
         print("CLASSIFICATIONS: {}".format(classifications))
 
         if len(intersection):
-            print("WARNING")
+            click.echo(click.style("{0}".format('WARNING '*10), fg='red', bold=True))
+            print(intersection)
     
         return Response(serializer.data, status.HTTP_201_CREATED)        

@@ -16,10 +16,14 @@ def get_tags(file_name):
 	image = types.Image(content=content)
 
 	# Performs label detection on the image file
-	response = client.label_detection(image=image)
+	response = client.label_detection(image=image)	
 	labels = response.label_annotations
 
 	ret = []
 	for label in labels:
-	    ret.append(label.description)
+		data = dict(
+			label=label.description,
+			score=label.score
+		)
+		ret.append(data)
 	return ret
