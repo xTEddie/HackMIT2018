@@ -1,6 +1,6 @@
 const settings = {
   IS_PROD: process.env.NODE_ENV === 'production',
-  API_HOST: process.env.API_HOST
+  API_ROOT: process.env.API_ROOT
 };
 
 export default settings;
