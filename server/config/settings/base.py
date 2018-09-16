@@ -91,6 +91,11 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.SessionAuthentication',
     ),
+    'DEFAULT_THROTTLE_CLASSES': (),    
+    # 'DEFAULT_THROTTLE_RATES': {
+    #     'anon': '10000/day',
+    #     'user': '100000/day'
+    # }    
 }
 
 CORS_ALLOW_CREDENTIALS = True
@@ -109,3 +114,4 @@ CORS_ALLOW_HEADERS = [
 ]
 
 DATA_UPLOAD_MAX_NUMBER_FIELDS = 10240
+
