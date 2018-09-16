@@ -39,6 +39,12 @@ class VideoFrameCreate(APIView):
 
         # Send image to Google Vision API
         classifications = get_tags(video_frame.image.path)
-        print(classifications)
+        tag_objects = Tag.objects.all()
+        tags = [obj.name for obj in tag_objects]
+
+        intersection = list(set(tags) & set(classifications))
+        
+        if len(intersection): 
+            print("WARNING")
     
         return Response(serializer.data, status.HTTP_201_CREATED)        
