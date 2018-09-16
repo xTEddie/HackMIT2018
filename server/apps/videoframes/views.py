@@ -19,7 +19,7 @@ class VideoFrameCreate(APIView):
     def post(self, request, format=None):
         
         camera_name = request.POST['camera_name']
-        tag_name = request.POST['tag']  
+        tag_name = request.POST['tag_name']  
         image = request.FILES['file']
         
         camera = Camera.objects.get(name=camera_name)
