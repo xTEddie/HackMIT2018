@@ -1,3 +1,45 @@
+$time: 3.5s;
 #home {
   padding: 20px 80px;
+  -webkit-animation: fadein $time;
+  -moz-animation: fadein $time;
+  -ms-animation: fadein $time;
+  -o-animation: fadein $time;
+  animation: fadein $time;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
