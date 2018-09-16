@@ -43,8 +43,11 @@ class VideoFrameCreate(APIView):
         tags = [obj.name for obj in tag_objects]
 
         intersection = list(set(tags) & set(classifications))
-        
-        if len(intersection): 
+
+        print("TAGS: {}".format(tags))
+        print("CLASSIFICATIONS: {}".format(classifications))
+
+        if len(intersection):
             print("WARNING")
     
         return Response(serializer.data, status.HTTP_201_CREATED)        
