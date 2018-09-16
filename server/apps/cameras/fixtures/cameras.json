@@ -1,0 +1,29 @@
+[
+{
+  "model": "cameras.camera",
+  "pk": 1,
+  "fields": {
+    "name": "Pi Cam 1",
+    "longitude": "42.358389",
+    "latitude": "-71.096712"
+  }
+},
+{
+  "model": "cameras.camera",
+  "pk": 2,
+  "fields": {
+    "name": "Pi Cam 2",
+    "longitude": "42.358389",
+    "latitude": "-71.096712"
+  }
+},
+{
+  "model": "cameras.camera",
+  "pk": 3,
+  "fields": {
+    "name": "Pi Cam 3",
+    "longitude": "42.358389",
+    "latitude": "-71.096712"
+  }
+}
+]
