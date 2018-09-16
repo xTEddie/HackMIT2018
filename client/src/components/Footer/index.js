@@ -5,7 +5,7 @@ class Footer extends Component {
   render() {
     return (
       <footer>
-        <span> Made with love in HackMIT 2018 </span>
+        <span> Coded with <i className="heart icon red"/> @ HackMIT 2018 </span>
       </footer>
     )
   }
