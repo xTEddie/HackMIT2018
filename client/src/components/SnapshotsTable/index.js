@@ -35,8 +35,9 @@ class SnapshotsTable extends Component {
       let allTableData = data.map((snapshot) => {
         let row = {};
         row['camera_name'] = snapshot['camera']['name']
-        row['longitude'] = snapshot['camera']['longitude']
-        row['latitude'] = snapshot['camera']['latitude']
+        // row['longitude'] = snapshot['camera']['longitude']
+        // row['latitude'] = snapshot['camera']['latitude']
+        row['geolocation'] = `${snapshot['camera']['longitude']},${snapshot['camera']['latitude']}`
         row['image'] = snapshot['image']
         row['uploaded_at'] = snapshot['uploaded_at']
         row['safety_status'] = snapshot['safety_status']
@@ -103,8 +104,9 @@ class SnapshotsTable extends Component {
     const {selectedColumn, sortOrder} = this.state;
     let headers = {
       'Camera Name': 'camera_name',
-      'Longitude': 'longitude',
-      'Latitude': 'latitude',
+      // 'Longitude': 'longitude',
+      // 'Latitude': 'latitude',
+      'Geolocation': 'geolocation',
       'Image': 'image',
       'Uploaded at': 'uploaded_at',
       'Safety': 'safety_status'
@@ -141,11 +143,14 @@ class SnapshotsTable extends Component {
                 <Table.Cell>
                     {snapshot['camera_name']}
                 </Table.Cell>
-                <Table.Cell>
+                {/* <Table.Cell>
                   {snapshot['longitude']}
                 </Table.Cell>
                 <Table.Cell>
                   {snapshot['latitude']}
+                </Table.Cell> */}
+                <Table.Cell>
+                  <a href={`https://www.google.com/maps/search/42.358389,-71.096712/${snapshot['geolocation']}`} target='_blank'>{snapshot['geolocation']}</a>
                 </Table.Cell>
                 <Table.Cell>
                   <Popup
