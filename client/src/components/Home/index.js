@@ -38,6 +38,7 @@ class Home extends Component {
         row['latitude'] = snapshot['camera']['latitude']
         row['image'] = snapshot['image']
         row['uploaded_at'] = snapshot['uploaded_at']
+        row['safety_status'] = snapshot['safetyStatus']
         return row
       })
       this.setState({
@@ -89,7 +90,8 @@ class Home extends Component {
       'Longitude': 'longitude',
       'Latitude': 'latitude',
       'Image': 'image',
-      'Uploaded at': 'uploaded_at'
+      'Uploaded at': 'uploaded_at',
+      'Safety': 'safety_status'
     }
 
     return (
@@ -117,6 +119,7 @@ class Home extends Component {
       <Table.Body>
         {
           tableData.map((snapshot, index_snapshot) => {
+            console.log(snapshot['safety_status'] === true)
             return (
               <Table.Row key={index_snapshot}>
                 <Table.Cell>
@@ -143,6 +146,10 @@ class Home extends Component {
                     />
                   </p>
                 </Table.Cell>
+                <Table.Cell>
+                  <i className={snapshot['safety_status'] === true? "check circle green big icon": "times circle red big icon"}/>
+                  {/* <i className={"check circle green"}/> */}
+                </Table.Cell>
               </Table.Row>
             )
           })
@@ -154,7 +161,10 @@ class Home extends Component {
   render() {
     return (
       <div id="home">
-        <h1> ShotSpot </h1>
+        <h1>
+          <i class="exclamation triangle icon red"/>
+          Shot Spot
+        </h1>
         {this.renderTable()}
         <Footer/>
       </div>
