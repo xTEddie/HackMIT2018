@@ -19,10 +19,6 @@ data = dict(
     tag_name=tag_name
 )
 
-files = {
-    file=open(image_path, 'rb')
-}
-
 while count < max_count:
     camera.start_preview()
     sleep(WAIT_TIME)
@@ -30,6 +26,9 @@ while count < max_count:
     camera.capture(image_path)
 
     # Send image to server 
+    files = dict(
+        file=open(image_path, 'rb')
+    ) 
     response = requests.post(api_url, files=files, data=data, verify=False)
     print(response.status_code)
 
