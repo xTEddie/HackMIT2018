@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import _ from 'lodash';
-import Footer from '../Footer/';
-import {Button, Popup, Table} from 'semantic-ui-react';
+import {Button, Popup, Table, Pagination, Icon} from 'semantic-ui-react';
 import Moment from 'react-moment';
 import settings from '../../config/settings';
 
@@ -13,9 +12,12 @@ class SnapshotsTable extends Component {
     super(props);
     this.state = {
       data: [],
+      allTableData: [],
       tableData: [],
       selectedColumn: null,
-      sortOrder: null
+      sortOrder: null,
+      perPage: 10,
+      activatePage: 1
     }
   }
 
@@ -30,7 +32,7 @@ class SnapshotsTable extends Component {
     .then((data) => {
       console.log(data)
       // Flatten array
-      let tableData = data.map((snapshot) => {
+      let allTableData = data.map((snapshot) => {
         let row = {};
         row['camera_name'] = snapshot['camera']['name']
         row['longitude'] = snapshot['camera']['longitude']
@@ -42,8 +44,9 @@ class SnapshotsTable extends Component {
       })
       this.setState({
         data,
-        tableData
+        allTableData,
       })
+      this.updatePagination(0, this.state.perPage);
     })
   }
 
@@ -62,6 +65,20 @@ class SnapshotsTable extends Component {
       tableData: tableData.reverse(),
       sortOrder: sortOrder === 'ascending'? 'descending': 'ascending'
     })
+  }
+
+  updatePagination(start, end) {
+    let { allTableData } = this.state;
+    let tableData = allTableData.slice(start, end);
+    this.setState({tableData: tableData});
+  }
+
+  handlePaginationChange(e, {activePage}) {
+    let { perPage } = this.state;
+    let start = (activePage  - 1) * perPage; // Include
+    let end = start + perPage; // Exclude
+    this.setState({activePage})
+    this.updatePagination(start, end);
   }
 
   renderTable() {
@@ -157,13 +174,19 @@ class SnapshotsTable extends Component {
   }
 
   render() {
+    const {activePage} = this.state;
     return (
       <div>
         <h1>
-          <i class="exclamation triangle icon red"/>
+          <i className="exclamation triangle icon red"/>
           Shot Spot
         </h1>
         {this.renderTable()}
+        <Pagination
+          activePage={activePage}
+          onPageChange={(e, page) => this.handlePaginationChange(e, page)}
+          totalPages={Math.ceil(this.state.allTableData.length / this.state.perPage)}
+        />
       </div>
     )
   }
