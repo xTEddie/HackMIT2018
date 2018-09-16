@@ -150,6 +150,7 @@ class SnapshotsTable extends Component {
                   {snapshot['latitude']}
                 </Table.Cell> */}
                 <Table.Cell>
+                  <i className="map marker alternate icon blue"/>
                   <a href={`https://www.google.com/maps/search/42.358389,-71.096712/${snapshot['geolocation']}`} target='_blank'>{snapshot['geolocation']}</a>
                 </Table.Cell>
                 <Table.Cell>
