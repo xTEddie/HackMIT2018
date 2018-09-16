@@ -28,3 +28,16 @@ export GOOGLE_APPLICATION_CREDENTIALS='google_vision_secrets.json'
     python manage.py runserver 0.0.0.0:8000
 ```
 
+- Install node dependencies
+
+```
+    cd client
+    yarn install
+```
+
+- Run React app
+
+```
+    yarn run start
+```
+
