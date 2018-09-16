@@ -4,6 +4,7 @@ import _ from 'lodash';
 import {Button, Popup, Table, Pagination, Icon} from 'semantic-ui-react';
 import Moment from 'react-moment';
 import settings from '../../config/settings';
+import './SnapshotsTable.scss';
 
 
 class SnapshotsTable extends Component {
@@ -182,7 +183,7 @@ class SnapshotsTable extends Component {
   render() {
     const {activePage} = this.state;
     return (
-      <div>
+      <div id="snapshots-table">
         <h1>
           <i className="exclamation circle icon red"/>
           Shot Spot
