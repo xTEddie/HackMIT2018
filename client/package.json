@@ -9,7 +9,7 @@
     "@babel/preset-react": "^7.0.0-beta.54",
     "axios": "^0.18.0",
     "babel-loader": "^8.0.0-beta",
-    "chart.js": "^2.7.2",
+    "chart.js": "^2.9.4",
     "clean-webpack-plugin": "^0.1.19",
     "compression-webpack-plugin": "^1.1.11",
     "css-loader": "^1.0.0",
